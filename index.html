@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Care Load Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <div>
+        <p class="brand-kicker">Useful art · self-assessment tool</p>
+        <h1>Care Load Calculator</h1>
+        <p class="site-subtitle">
+          A reflective tool for students, friends, family members, and collaborators
+          who often carry the emotional work of keeping difficult conversations stable.
+        </p>
+      </div>
+
+      <div class="page-indicator">
+        <div class="page-label" id="pageLabel">Introduction</div>
+        <div class="dot active"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+    </header>
+
+    <main>
+      <!-- PAGE 1 -->
+      <section id="page-intro" class="page active">
+        <div class="hero-card">
+          <div>
+            <p class="eyebrow">Who this tool is for</p>
+            <h2 class="section-title">For people who keep the atmosphere from breaking</h2>
+            <p>
+              This website is designed for people who often mediate tension,
+              soften their language, stay quiet to avoid escalation, or leave
+              conversations feeling unusually drained.
+            </p>
+
+            <div class="meta-grid">
+              <div class="panel">
+                <h3 class="section-title">What it does</h3>
+                <p>
+                  The quiz tracks patterns of adjustment, self-silencing, and emotional
+                  fatigue. Your answers are saved locally, turned into a score,
+                  and used to generate a result with practical next steps.
+                </p>
+              </div>
+
+              <div class="panel">
+                <h3 class="section-title">Choose a context</h3>
+                <label for="contextSelect" class="mini-note">
+                  Where do these interactions happen most often?
+                </label>
+                <select id="contextSelect" class="context-select">
+                  <option value="group projects">Group projects</option>
+                  <option value="family conversations">Family conversations</option>
+                  <option value="friendships">Friendships</option>
+                  <option value="shared living">Shared living</option>
+                  <option value="class discussions">Class discussions</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="clover-wrap" aria-hidden="true">
+            <div class="clover">
+              <div class="petal top">adjusting<br>tone</div>
+              <div class="petal right">holding<br>tension</div>
+              <div class="petal bottom">staying<br>careful</div>
+              <div class="petal left">keeping<br>calm</div>
+              <div class="clover-center">care<br>load</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="nav-row">
+          <span class="mini-note">8 questions · local storage · practical result</span>
+          <button id="startBtn" class="button-primary">Start Quiz</button>
+        </div>
+      </section>
+
+      <!-- PAGE 2 -->
+      <section id="page-quiz" class="page">
+        <div class="quiz-header">
+          <div>
+            <p class="eyebrow">Self-assessment</p>
+            <h2 class="section-title">How often do you carry the emotional labor?</h2>
+            <p class="mini-note">Choose the answer that feels closest: Often, Sometimes, or Rarely.</p>
+          </div>
+
+          <div class="progress-shell">
+            <div class="progress-meta">
+              <span>Progress</span>
+              <span id="progressText">0 / 8 answered</span>
+            </div>
+            <div class="progress-track">
+              <div id="progressBar" class="progress-fill"></div>
+            </div>
+          </div>
+        </div>
+
+        <div id="quizContainer" class="question-list"></div>
+
+        <div class="nav-row">
+          <button id="backToIntroBtn">Back</button>
+          <button id="toAboutBtn" class="button-primary">Continue</button>
+        </div>
+      </section>
+
+      <!-- PAGE 3 -->
+      <section id="page-about" class="page">
+        <div class="about-grid">
+          <div class="research-card">
+            <p class="eyebrow">Project purpose</p>
+            <h2 class="section-title">A small tool, not a perfect solution</h2>
+            <p>
+              This project treats a website as a practical intervention. Instead of only
+              representing polarization as a political issue, it asks how that tension
+              appears in daily life through caution, silence, mediation, and emotional exhaustion.
+            </p>
+            <p>
+              It is inspired by the idea of useful art: work that can function as a tool,
+              framework, or system people use directly. The goal is to make invisible care work
+              more visible and give users language for naming it.
+            </p>
+          </div>
+
+          <div class="research-card">
+            <p class="eyebrow">Research links</p>
+            <h3 class="section-title">Grounding the tool</h3>
+            <ul class="research-list">
+              <li>
+                <a href="https://www.pewresearch.org/politics/2023/09/19/americans-feelings-about-politics-polarization-and-the-tone-of-political-discourse/" target="_blank">
+                  Pew Research Center — Americans’ feelings about politics, polarization and the tone of political discourse
+                </a>
+              </li>
+              <li>
+                <a href="https://www.pewresearch.org/short-reads/2022/11/16/most-across-19-countries-see-strong-partisan-conflicts-in-their-society-especially-in-south-korea-and-the-u-s/" target="_blank">
+                  Pew Research Center — Strong partisan conflict in South Korea and the U.S.
+                </a>
+              </li>
+              <li>
+                <a href="https://www.kihasa.re.kr/en/publish/paper/research/view?seq=30737" target="_blank">
+                  KIHASA — Research on social conflict, social cohesion, and differences by gender, generation, and socioeconomic group
+                </a>
+              </li>
+              <li>
+                <a href="https://eastasiaforum.org/2024/06/14/scrutinising-south-koreas-gender-divide-narrative/" target="_blank">
+                  East Asia Forum — South Korea’s gender divide narrative
+                </a>
+              </li>
+            </ul>
+            <p class="mini-note">
+              <!-- This tool focuses on the everyday labor created by these conditions rather than party identity itself. -->
+            </p>
+          </div>
+        </div>
+
+        <div class="nav-row">
+          <button id="backToQuizBtn">Back</button>
+          <button id="seeResultBtn" class="button-primary">See Result</button>
+        </div>
+      </section>
+
+      <!-- PAGE 4 -->
+      <section id="page-result" class="page">
+        <div class="result-grid">
+          <div class="result-card">
+            <p class="eyebrow">Your result</p>
+            <div class="context-pill" id="resultContext"></div>
+
+            <div class="result-score">
+              <div class="score-number" id="resultScore">0</div>
+              <div class="score-caption">out of 16</div>
+            </div>
+
+            <div class="meter">
+              <div id="resultMarker" class="marker"></div>
+            </div>
+
+            <div id="resultBox"></div>
+          </div>
+
+          <div class="script-card">
+            <p class="eyebrow">Practical scripts</p>
+            <h3 class="section-title">Language you can actually use</h3>
+            <ul class="script-list">
+              <li>“I want to continue this conversation, but I need us to slow down.”</li>
+              <li>“I feel like I’ve been doing a lot of the emotional organizing here.”</li>
+              <li>“I do not want to keep smoothing this over by myself.”</li>
+              <li>“Can we make responsibility for this conversation more shared?”</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="nav-row">
+          <!-- <span class="mini-note">This button clears saved answers and starts the quiz over.</span> -->
+          <button id="restartBtn" class="button-primary">Start Over</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      Final website prototype for Project 4 · 4 pages · 8 questions · local storage · result-based visual change
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
